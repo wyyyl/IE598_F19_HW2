@@ -138,3 +138,6 @@ plt.ylabel('price_distortion')
 plt.legend(loc='upper left')
 plt.show()
 
+print("My name is Yulong Wang")
+print("My NetID is yulongw2")
+print("I hereby certify that I have read the University policy on Academic Intergrity and that I a not in violation")
