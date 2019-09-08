@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[50]:
+# In[1]:
 
 
 import pandas as pd
@@ -14,7 +14,7 @@ y=np.array(df[1:,9])
 print('Class labels:',np.unique(y))
 
 
-# In[51]:
+# In[2]:
 
 
 #split the data into training set and test set
@@ -22,7 +22,7 @@ from sklearn.model_selection import train_test_split
 X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.3,random_state=33,stratify=y)
 
 
-# In[52]:
+# In[3]:
 
 
 from sklearn.neighbors import KNeighborsClassifier
@@ -41,7 +41,7 @@ for i,k in enumerate(neighbors):
     test_accuracy[i]=knn.score(X_test,y_test)
 
 
-# In[53]:
+# In[5]:
 
 
 #genearte a plot
@@ -58,7 +58,7 @@ plt.show
 #Since when k=16, the classifier has a highest Testing Accuracy Score and similar Training Accuracy Score
 
 
-# In[54]:
+# In[6]:
 
 
 from matplotlib.colors import ListedColormap
@@ -87,12 +87,12 @@ def plot_decision_regions(X, y, classifier, test_idx=None, resolution=0.02):
         plt.scatter(X_test[:, 0], X_test[:, 1],c='', edgecolor='black', alpha=1.0,linewidth=1, marker='o',s=100, label='test set')
 
 
-# In[55]:
+# In[7]:
 
 
 #Classify the first two columns of data with a DecisionTree Classifier
 from sklearn.preprocessing import StandardScaler
-df1 = pd.read_csv('C:/Users/Taki/Desktop/Treasury Squeeze test - DS1.csv',header=None,sep=',')
+df1 = pd.read_csv('C:/Users/Taki/Desktop/Treasury Squeeze test - DS1.csv',header=None)
 X1=df1.iloc[1:,[0,1]]
 y1=df1.iloc[1:,9]
 y1 = pd.factorize(y1)[0].tolist()
@@ -112,7 +112,7 @@ plt.legend(loc='upper left')
 plt.show()
 
 
-# In[45]:
+# In[8]:
 
 
 from sklearn.tree import DecisionTreeClassifier
@@ -126,7 +126,7 @@ print(y_pred[:])
 print("Test set accuracy:{:.2f}".format(accuracy_score(y_test,y_pred)))
 
 
-# In[57]:
+# In[9]:
 
 
 #Classify the first two columns of data with a DecisionTree Classifier
@@ -137,10 +137,4 @@ plt.xlabel('price_crossing')
 plt.ylabel('price_distortion')
 plt.legend(loc='upper left')
 plt.show()
-
-
-# In[ ]:
-
-
-
 
